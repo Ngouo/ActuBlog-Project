@@ -1,0 +1,25 @@
+{%extends 'MonBlog/base.html'%} {% block title %}Home Page{% endblock title%}
+{%load crispy_forms_tags%} {%block content%}
+<div class="cover">
+  <div class="container">
+    <div class="row mt-5 pt-3">
+      <div class="col-md-10">
+        <div class="card my-2 shadow">
+          <div class="card-body">
+            <center><h4>Postez votre article ici !</h4></center>
+            <br />
+            <form method="POST" enctype="multipart/form-data">
+              {%csrf_token%} {{form | crispy}}
+              <input
+                class="btn btn-secondary btn-block"
+                type="submit"
+                value="Poster"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

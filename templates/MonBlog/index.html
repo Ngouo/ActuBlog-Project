@@ -1,0 +1,89 @@
+{%extends 'MonBlog/base.html'%} {% block title %}Home Page{% endblock title%}
+{%load crispy_forms_tags%} {%block content%}
+<div class="cover">
+  <div class="container">
+    <div class="row mt-5 pt-3">
+      <div class="col-md-4">
+        <div class="card my-2 shadow">
+          <div class="card-body">
+            <center>
+              <h4>Vous souhaitez postez un article ?</h4>
+              <br />
+              <a class="btn btn-success" href="{%url 'post_submit'%}"
+                >cliquez ici !</a
+              >
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        {%for post in page_obj%}
+        <div class="card shadow my-2 cover">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <img
+                    class="img-thumbnail"
+                    src="{{post.auteur.profilemodel.image.url}}"
+                    alt="img"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <small
+                    >Publié par : {{post.auteur}} |
+                    {{post.date_publication}}</small
+                  >
+                  <hr />
+                  <u><p class="h3 text-secondary">{{post.title}}</p></u>
+
+                  <p class="text-justify my-3">
+                    {{post.contenu| truncatewords:20 }}
+                  </p>
+                  <p>
+                    <a
+                      class="btn btn-primary"
+                      href="{%url 'post_detail2' post.id%}"
+                      >Lire la suite</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+        <div class="pagination">
+          <span class="step-links">
+            {% if page_obj.has_previous %}
+
+            <strong
+              ><a href="?page=1">&laquo; first</a> |
+              <a href="?page={{ page_obj.previous_page_number }}"
+                >previous</a
+              ></strong
+            >
+
+            <br />
+            {% endif %}
+
+            <span class="current">
+              Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+            <strong
+              ><a href="?page={{ page_obj.next_page_number }}">next</a> |
+              <a href="?page={{ page_obj.paginator.num_pages }}"
+                >last &raquo;</a
+              ></strong
+            >
+            <br />
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

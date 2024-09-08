@@ -1,0 +1,27 @@
+{%extends 'MonBlog/base.html'%} {% block title %}Post Delete{% endblock title%}
+{%block content%}
+<div class="container">
+  <div class="row mt-5 pt-3">
+    <div class="col-md-8 offset-md-2">
+      <div class="card my-2 shadow">
+        <div class="card-body">
+          <div class="alert alert-danger">Voulez-vous vraiment supprimer ?</div>
+          <form method="POST">
+            {%csrf_token%}
+            <a
+              class="btn btn-secondary btn-sm"
+              href="{%url 'post_detail2' post.id%}"
+              >Annuler</a
+            >
+            <input
+              class="btn btn-primary btn-sm"
+              type="submit"
+              value="Confirmer"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,29 @@
+.cover {
+  background-image: url("fond2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.cover2 {
+  background-image: url("fond2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+.fa-github {
+  margin-left: 20px;
+  color: black;
+}
+
+.fa-linkedin {
+  color: black;
+}
+
+.fa-user-tie {
+  margin-left: 20px;
+  color: black;
+}
+
+.logo {
+  font-weight: bold;
+}

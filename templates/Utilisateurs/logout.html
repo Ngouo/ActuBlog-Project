@@ -1,0 +1,18 @@
+{%extends 'Utilisateurs/base_logout.html'%} {%block content%}
+
+<div class="container">
+  <div class="row mt-5 pt-3">
+    <div class="col-md-6 offset-md-3">
+      <div class="card my-3 shadow">
+        <div class="card-body">
+          <h4>Logout Page</h4>
+          <hr />
+          <div class="alert alert-info">Vous avez éte deconnecté.</div>
+          <a href="{%url 'user-login'%}">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock content%}
