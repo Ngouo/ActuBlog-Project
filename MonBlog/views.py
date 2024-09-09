@@ -102,3 +102,6 @@ def infos(request):
   return render(request, 'MonBlog/infos.html')
 
 
+def Accueil(request):
+  return render(request, 'MonBlog/Accueil.html')
+

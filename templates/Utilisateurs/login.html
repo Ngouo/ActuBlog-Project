@@ -1,63 +1,31 @@
 {%extends 'MonBlog/base.html'%} {% block title %}Login Page{% endblock title %}
 {%load crispy_forms_tags%}{%load static%}{%block content%}
-<div class="cover">
+<div class="cover2">
   <div class="container">
-    <div class="row mt-5 pt-4">
-      <div class="col-md-5">
-        <div class="card my-2 shadow">
+    <div class="row mt-5 pt-3">
+      <div class="col-md-5 offset-md-4">
+        <div class="card my-3 shadow">
           <div class="card-body">
-            <center>
-              <div class="col-md-4" style="background-color: wheat">
-                <img
-                  class="img-thumbnail"
-                  style="font-size: 90px"
-                  src="{%static './emoticon.png'%}"
-                  alt=""
-                />
-              </div>
-
-              <br />
-              <h3>Salut jeune blogueur.e !</h3>
-            </center>
-            <h4>
-              Bienvenu.e sur ActuBlog,le site qui contient les articles les plus
-              récents de différents auteurs lamdbdas ou de renom. Politique,
-              sport, Histoire ou expérience personnelle il y'en a pour tout les
-              gouts. Tu veux faire partie de l'aventure ? Eh bien inscrit toi
-              pour pouvoir poster tes propres articles et pour ne rien manquer
-              des publications les plus récentes.
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-1 pt-7">
-        <div class="col-md-12">
-          <div class="col-md-12 offset-md-6">
-            <div class="card my-1 shadow">
-              <div class="card-body">
-                <h4>Login Page</h4>
-                <hr />
-
-                <form method="POST" enctype="multipart/form-data">
-                  {%csrf_token%} {{form|crispy}}
-                  <input
-                    class="btn btn-primary btn-block"
-                    type="submit"
-                    value="Login"
-                  />
-                </form>
-                <hr />
-                <div class="text-center my-3">
-                  <a href="{%url 'password_reset'%}">Mot de passe oublié ?</a>
-                </div>
-                <hr />
-                <div class="text-center my-3">
-                  Pas encore inscrit ?
-                  <a class="btn btn-success" href="{% url 'sign_up'%}"
-                    >Creer un compte</a
-                  >
-                </div>
-              </div>
+            <h4>Connexion</h4>
+            <hr />
+            <form method="POST" enctype="multipart/form-data">
+              {%csrf_token%} {{form|crispy}}
+              <input
+                class="btn btn-primary btn-block"
+                type="submit"
+                value="Se connecter"
+              />
+            </form>
+            <hr />
+            <div class="text-center my-3">
+              <a href="{%url 'password_reset'%}">Mot de passe oublié ?</a>
+            </div>
+            <hr />
+            <div class="text-center my-3">
+              Pas encore inscrit ?
+              <a class="btn btn-success" href="{% url 'sign_up'%}"
+                >Creer un compte</a
+              >
             </div>
           </div>
         </div>

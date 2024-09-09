@@ -25,7 +25,9 @@
           placeholder="Rechercher un titre ici..."
           aria-label="Search"
         />
-        <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-dark my-2 my-sm-0" type="submit">
+          Rechercher
+        </button>
       </form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
@@ -47,11 +49,13 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <a class="nav-link text-white" href="{%url 'sign_up'%}"
-            >Sign Up <span class="sr-only">(current)</span></a
+            >Inscription <span class="sr-only">(current)</span></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{%url 'user-login'%}">Login</a>
+          <a class="nav-link text-white" href="{%url 'user-login'%}"
+            >Connexion</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{%url 'infos'%}">A propos</a>
