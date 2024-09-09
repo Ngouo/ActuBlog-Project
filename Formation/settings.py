@@ -142,7 +142,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'homeBlog'
 
-LOGIN_URL = '/Accueil'
+LOGIN_URL = ''
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
